@@ -1,0 +1,53 @@
+import random
+def checker(correct_guess):
+    #vertical win
+    if(correct_guess[0][0]==1 and correct_guess[0][1]==1 and correct_guess[0][2]==1):
+        print("player 1 has won")
+    elif(correct_guess[0][0]==2 and correct_guess[0][1]==2 and correct_guess[0][2]==2):
+        print("player 2 has won")
+
+    if(correct_guess[0][3]==1 and correct_guess[0][4]==1 and correct_guess[0][5]==1):
+        print("player 1 has won")
+    elif(correct_guess[0][3]==2 and correct_guess[0][4]==2 and correct_guess[0][5]==2):
+        print("player 2 has won")
+
+    if(correct_guess[0][6]==1 and correct_guess[0][7]==1 and correct_guess[0][8]==1):
+        print("player 1 has won")
+    elif(correct_guess[0][0]==2 and correct_guess[0][1]==2 and correct_guess[0][2]==2):
+        print("player 2 has won")
+
+    #horizontal win
+    if(correct_guess[0][0]==1 and correct_guess[0][3]==1 and correct_guess[0][6]==1):
+         print("player 1 has won")
+    elif(correct_guess[0][0]==2 and correct_guess[0][3]==2 and correct_guess[0][6]==2):
+        print("player 2 has won")
+    if(correct_guess[0][1]==1 and correct_guess[0][4]==1 and correct_guess[0][7]==1):
+        print("player 1 has won")
+    elif(correct_guess[0][1]==2 and correct_guess[0][4]==2 and correct_guess[0][7]==2):
+        print("player 2 has won")
+    if(correct_guess[0][2]==1 and correct_guess[0][5]==1 and correct_guess[0][8]==1):
+        print("player 1 has won")
+    elif(correct_guess[0][2]==2 and correct_guess[0][5]==2 and correct_guess[0][8]==2):
+        print("player 2 has won")
+    if(correct_guess[0][2]==1 and correct_guess[0][5]==1 and correct_guess[0][8]==1):
+        print("player 1 has won")
+    elif(correct_guess[0][2]==2 and correct_guess[0][5]==2 and correct_guess[0][8]==2):
+        print("player 2 has won")
+
+    #diagonal win
+    if(correct_guess[0][0]==1 and correct_guess[0][4]==1 and correct_guess[0][8]==1):
+         print("player 1 has won")
+    elif(correct_guess[0][0]==2 and correct_guess[0][4]==2 and correct_guess[0][8]==2):
+        print("player 2 has won")
+    if(correct_guess[0][2]==1 and correct_guess[0][4]==1 and correct_guess[0][6]==1):
+         print("player 1 has won")
+    elif(correct_guess[0][2]==2 and correct_guess[0][4]==2 and correct_guess[0][6]==2):
+        print("player 2 has won")
+
+random_guess =[[random.randint(1,2), random.randint(1,2), random.randint(1,2),
+         random.randint(1,2), random.randint(1,2), random.randint(1,2),
+         random.randint(1,2), random.randint(1,2), random.randint(1,2)]]
+
+correct_guess=[[1, 2, 2, 1, 2,2,1,1,1]]
+if __name__=="__main__":
+    checker(correct_guess)
