@@ -1,0 +1,37 @@
+import random
+import numpy
+
+
+def checker(game_board):
+    row_win=0
+    coloumn_win=0
+    for i in range(3):
+        row_set=set(game_board[i])
+        if len(row_set) == 1 and game_board[i][0]!=0:
+            row_win=row_win+1
+            return game_board[i][0] 
+
+    if row_win!=1:
+        verticle = numpy.transpose(game_board())
+        for i in range(3):
+            col_set=set(verticle[i])
+            if len(col_set) == 1 and game_board[i][0]!=0:
+                coloumn_win=coloumn_win+1
+                return verticle[i][0] 
+            
+    elif row_win!=1 and coloumn_win!=1:
+         if game_board[1][1] != 0:
+             if game_board[1][1] == game_board[0][0] == game_board[2][2]: 
+                 return game_board[1][1]
+             elif game_board[1][1] == game_board[0][2] == game_board[2][0]:
+                 return game_board[1][1]
+
+
+game_board =[ [random.randint(1,2), random.randint(1,2), random.randint(1,2)],
+                [random.randint(1,2), random.randint(1,2), random.randint(1,2)],
+                [random.randint(1,2), random.randint(1,2), random.randint(1,2)]
+              ]
+if __name__=="__main__":
+    winner = checker(game_board)
+    print(game_board)
+    print(f"Player {winner} has won!")
